@@ -1,0 +1,45 @@
+<form [formGroup]="RegisterForm" (ngSubmit)="submitForm(RegisterForm)">
+  <h3 class="mb-3 mt-5">Register Now</h3>
+  <label for="username">User Name</label>
+  <input type="text" name="" id="username" formControlName="username" class="form-control">
+  <div *ngIf="RegisterForm.get('username')?.errors && RegisterForm.get('username')?.touched "
+    class="alert alert-danger mt-1">
+    <p *ngIf="RegisterForm.get('username')?.errors?.['required']">User Name is Required</p>
+    <p *ngIf="RegisterForm.get('username')?.errors?.['minlength']">User Name Minimum length is 3</p>
+    <p *ngIf="RegisterForm.get('username')?.errors?.['maxlength']">User Name Maximum length is 10</p>
+  </div>
+  <label for="name">Name</label>
+  <input type="text" name="" id="name" formControlName="name" class="form-control">
+  <div *ngIf="RegisterForm.get('name')?.errors && RegisterForm.get('name')?.touched " class="alert alert-danger mt-1">
+    <p *ngIf="RegisterForm.get('name')?.errors?.['required']">Name is Required</p>
+    <p *ngIf="RegisterForm.get('name')?.errors?.['minlength']">Name Minimum length is 3</p>
+    <p *ngIf="RegisterForm.get('name')?.errors?.['maxlength']">Name Maximum length is 10</p>
+  </div>
+  <label for="email">Email</label>
+  <input type="email" name="" id="email" formControlName="email" class="form-control">
+  <div *ngIf="RegisterForm.get('email')?.errors && RegisterForm.get('email')?.touched" class="alert alert-danger mt-1">
+    <p *ngIf="RegisterForm.get('email')?.errors?.['required']">Email is Required</p>
+    <p *ngIf="RegisterForm.get('email')?.errors?.['email']">Email is invaild</p>
+  </div>
+  <!-- <label for="age">Image</label>
+  <input type="file" name="" id="image" formControlName="image" class="form-control">
+  <div *ngIf="RegisterForm.get('image')?.errors && RegisterForm.get('age')?.touched" class="alert alert-danger mt-1">
+    <p *ngIf="RegisterForm.get('image')?.errors?.['required']">Image is required</p>
+  </div> -->
+  <label for="password">Password</label>
+  <input type="password" name="" id="password" formControlName="password" class="form-control">
+  <div *ngIf="RegisterForm.get('password')?.errors && RegisterForm.get('password')?.touched"
+    class="alert alert-danger mt-1">
+    <p *ngIf="RegisterForm.get('password')?.errors?.['required']">Password is Required</p>
+    <p *ngIf="RegisterForm.get('password')?.errors?.['pattern']">password should contain atleast one number and one
+      special character</p>
+  </div>
+  <button [disabled]="RegisterForm.invalid" type="submit" class="btn btn-info mt-5">Register</button>
+
+
+
+
+
+
+</form>
+

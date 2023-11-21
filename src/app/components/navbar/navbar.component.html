@@ -1,0 +1,34 @@
+<div class="navbar d-flex bg-dark text-white align-items-center">
+  <div class="logo">
+    <h6>
+      <a routerLink="/home" class="text-white"
+        ><img
+          src="assets/logo.png"
+          alt=""
+          class="img-fluid"
+          style="width: 100px; height: 100px"
+      /></a>
+    </h6>
+  </div>
+  <div class="search">
+    <input
+      type="text"
+      placeholder="Search Your Product here"
+      class="form-control"
+    />
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  <div class="links d-flex">
+    <div class="user-links">
+      <a routerLink="/home">Home</a>
+      <a routerLink="/login" *ngIf="!isUserLogged">Login</a>
+      <a routerLink="/" (click)="logout()" *ngIf="isUserLogged">Logout</a>
+    </div>
+    <div class="shopping-cart">
+      <a routerLink="/cart"
+        ><i class="fa-solid fa-cart-shopping cart-icon"></i
+      ></a>
+      <span class="bg-danger rounded">{{ cartCountNumber }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="select mt-5">
+  <select
+    class="form-select"
+    aria-label="Default select example"
+    (change)="searchCategory($event)"
+  >
+    <option selected>Open this select menu</option>
+    <option *ngFor="let category of categoriesArray" value="{{ category }}">
+      {{ category }}
+    </option>
+  </select>
+</div>

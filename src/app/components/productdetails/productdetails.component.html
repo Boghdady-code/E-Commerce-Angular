@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="box">
+    <div class="images">
+      <div class="img-holder active">
+        <img [src]="image" />
+      </div>
+    </div>
+    <div class="basic-info">
+      <h6 class="text-secondary text-uppercase">{{ category }}</h6>
+      <h1>{{ title }}</h1>
+      <div class="rate">
+        <i class="filled fas fa-star"></i>
+        <i class="filled fas fa-star"></i>
+        <i class="filled fas fa-star"></i>
+        <i class="filled fas fa-star"></i>
+        <i class="filled fas fa-star"></i>
+      </div>
+      <span>{{ price | currency }}</span>
+    </div>
+    <div class="description">
+      <p>{{ description }}</p>
+      <ul class="social">
+        <li>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="w-100 row loading" *ngIf="loading">
+      <p-skeleton width="70rem" height="40rem" class="col-md-12"></p-skeleton>
+    </div>
+  </div>
+</div>

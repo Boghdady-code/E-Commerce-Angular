@@ -1,0 +1,71 @@
+<div class="container row">
+  <div class="cart-header">
+    <h3>Shopping Cart</h3>
+    <h4>You have {{ cartProducts.length }} items in your cart</h4>
+    <button class="btn btn-danger" (click)="deleteAllCart()">
+      Clear Shopping Cart
+    </button>
+  </div>
+  <div class="cart-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartProducts; let index = index">
+          <td class="image">
+            <img [src]="item.product.image" alt="" class="w-100" />
+          </td>
+          <td>{{ item.product.title }}</td>
+          <td>{{ item.product.price }}$</td>
+          <td>
+            <div class="quantity">
+              <button class="btn btn-dark" (click)="addAmount(index)">+</button>
+              <input
+                type="text"
+                name=""
+                id=""
+                class="form-control"
+                (change)="detectChange()"
+                [(ngModel)]="item.quantity"
+              />
+              <button class="btn btn-dark" (click)="minsAmount(index)">
+                -
+              </button>
+            </div>
+          </td>
+          <td>{{ item.product.price * item.quantity | currency }}$</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteProduct(index)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot class="col-md-8">
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>{{ total | currency }}$</th>
+          <th>
+            <button class="btn btn-success" (click)="orderNow()">
+              Order Now
+            </button>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+    <div *ngIf="success" class="alert alert-success" role="alert">
+      Well done, Your order is successfully Placed
+    </div>
+  </div>
+</div>

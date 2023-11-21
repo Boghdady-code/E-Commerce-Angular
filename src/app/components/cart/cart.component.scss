@@ -1,0 +1,24 @@
+.cart-header {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+
+}
+
+.cart-body table thead {
+
+  color: black;
+
+}
+
+tbody .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 80px;
+}

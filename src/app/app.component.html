@@ -1,0 +1,63 @@
+<p-progressSpinner class="loader" *ngIf="loader"></p-progressSpinner>
+
+<div *ngIf="!loader">
+  <app-navbar></app-navbar>
+  <div class="container mt-5">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="footer mt-5">
+    <div class="container">
+      <div class="box">
+        <h3 class="title">
+          <img
+            src="assets/logo.png"
+            alt=""
+            class="img-fluid"
+            style="width: 200px"
+          />
+        </h3>
+        <ul class="socials p-0">
+          <li id="facebook">
+            <a href="www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li id="twitter">
+            <a href="www.Twitter.com"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li id="youtube">
+            <a href="www.Youtube.com"><i class="fab fa-youtube"></i></a>
+          </li>
+        </ul>
+        <p>
+          Find everything you need on our website. Low Prices, Fast Shipping
+        </p>
+      </div>
+      <div class="box">
+        <ul class="links">
+          <li><a routerLink="/home">Home</a></li>
+          <li><a routerLink="/cart">Cart</a></li>
+          <li><a routerLink="/productdetails">Product Details</a></li>
+          <li><a routerLink="/blog">Blog</a></li>
+          <li><a routerLink="/careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="line">
+          <i class="fas fa-map-marker-alt fa-fw"></i>
+          <div class="info">Egypt, Cairo.</div>
+        </div>
+        <div class="line">
+          <i class="far fa-clock fa-fw"></i>
+          <div class="info">Business Hours: From 10:00 To 18:00</div>
+        </div>
+        <div class="line">
+          <i class="fas fa-phone-volume fa-fw"></i>
+          <div class="info">
+            <span>+201017295646</span>
+            <span>+201017295646</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">Made with Boghdady &copy; 2023</div>
+  </div>
+</div>
