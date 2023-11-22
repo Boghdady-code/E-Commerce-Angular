@@ -1,5 +1,6 @@
 .navbar {
   padding: 2px 20px;
+  height: 100px;
 
 
 
@@ -47,6 +48,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
 
 }
 
@@ -58,18 +60,24 @@
 
 .navbar .links .user-links {
   margin-right: 20px;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
-.navbar .links .shopping-cart {
+.navbar .shopping-cart {
   position: relative;
 
 }
 
-.navbar .links .shopping-cart i {
+.navbar .shopping-cart i {
   font-size: 25px;
+  color: #fff;
 }
 
-.navbar .links .shopping-cart span {
+.navbar .shopping-cart span {
   position: absolute;
   left: 15px;
   top: 8px;
@@ -79,3 +87,117 @@
 
 
 }
+
+.burger {
+
+  width: 25px;
+  height: 14px;
+  position: relative;
+  display: none;
+
+}
+
+.burger span {
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  user-select: none;
+
+}
+
+.burger span:first-child {
+  top: 0;
+}
+
+.burger span:nth-child(2) {
+  top: 50%;
+}
+
+.burger span:last-child {
+  top: 100%;
+}
+
+
+.burger:hover span:nth-child(2) {
+  opacity: 0;
+
+
+}
+
+.burger:hover span:first-child {
+  background-color: red;
+  top: 6px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+
+.burger:hover span:last-child {
+  background-color: red;
+  top: 6px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+}
+
+
+@media (max-width: 787px) {
+  .burger {
+    display: block;
+  }
+
+    .navbar .links .user-links {
+      display: none;
+        flex-direction: column;
+        position: absolute;
+        left: -225px;
+        bottom: -112px;
+        width: 375px;
+        background-color: #212529;
+        padding: 10px;
+
+    }
+
+    .links:hover .user-links {
+        display: flex !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.burger:hover .user-links a {
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+}
+

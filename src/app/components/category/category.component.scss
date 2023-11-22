@@ -1,8 +1,16 @@
 @media (max-width:767px) {
 
-  select {
-    max-width: 250px;
+  .select {
+
+    margin-top: 225px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+  select {
+    text-align: center;
+  }
+
 
 
 }

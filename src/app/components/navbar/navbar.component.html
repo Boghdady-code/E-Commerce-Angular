@@ -1,13 +1,9 @@
 <div class="navbar d-flex bg-dark text-white align-items-center">
   <div class="logo">
     <h6>
-      <a routerLink="/home" class="text-white"
-        ><img
-          src="assets/logo.png"
-          alt=""
-          class="img-fluid"
-          style="width: 100px; height: 100px"
-      /></a>
+      <a routerLink="/home" class="text-white">
+        <i class="fa-solid fa-shop fa-lg"></i>
+      </a>
     </h6>
   </div>
   <div class="search">
@@ -24,11 +20,16 @@
       <a routerLink="/login" *ngIf="!isUserLogged">Login</a>
       <a routerLink="/" (click)="logout()" *ngIf="isUserLogged">Logout</a>
     </div>
-    <div class="shopping-cart">
-      <a routerLink="/cart"
-        ><i class="fa-solid fa-cart-shopping cart-icon"></i
-      ></a>
-      <span class="bg-danger rounded">{{ cartCountNumber }}</span>
+    <div class="burger mx-3">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
+  </div>
+  <div class="shopping-cart">
+    <a routerLink="/cart"
+      ><i class="fa-solid fa-cart-shopping cart-icon"></i
+    ></a>
+    <span class="bg-danger rounded">{{ cartCountNumber }}</span>
   </div>
 </div>
