@@ -1,7 +1,7 @@
 import { ProductService } from './../../services/product.service';
 import { AuthService } from './../../services/auth.service';
 import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   isUserLogged:boolean=false;
   cartCountNumber : number = 0;
+  @ViewChild ('burger') burger!:ElementRef;
   constructor(private AuthService:AuthService, private productService:ProductService) { }
 
 
@@ -36,6 +37,10 @@ export class NavbarComponent implements OnInit {
       this.cartCountNumber = response;
     })
 
+  }
+
+  toggleMenu(){
+    this.burger.nativeElement.classList.toggle('active-burger');
   }
 
 }

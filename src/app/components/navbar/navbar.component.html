@@ -15,12 +15,12 @@
     <i class="fa-solid fa-magnifying-glass"></i>
   </div>
   <div class="links d-flex">
-    <div class="user-links">
+    <div class="user-links" #burger>
       <a routerLink="/home">Home</a>
       <a routerLink="/login" *ngIf="!isUserLogged">Login</a>
       <a routerLink="/" (click)="logout()" *ngIf="isUserLogged">Logout</a>
     </div>
-    <div class="burger mx-3">
+    <div class="burger mx-3" (click)="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>

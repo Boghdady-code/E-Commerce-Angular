@@ -156,43 +156,31 @@
 @media (max-width: 787px) {
   .burger {
     display: block;
+
   }
 
-    .navbar .links .user-links {
-      display: none;
-        flex-direction: column;
-        position: absolute;
-        left: -225px;
-        bottom: -112px;
-        width: 375px;
-        background-color: #212529;
-        padding: 10px;
+
+  .links .user-links {
+    display: none;
+  }
+
+
+    .active-burger {
+      display: flex !important;
+      flex-direction: column;
+      position: absolute;
+      left: -225px;
+      bottom: -112px;
+      width: 370px;
+      background-color: #212529;
+      padding: 15px;
 
     }
 
-    .links:hover .user-links {
-        display: flex !important;
+    .links .user-links a {
+      margin-bottom: 20px;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.burger:hover .user-links a {
-    margin-bottom: 20px;
-}
 
 
 
@@ -200,4 +188,8 @@
 
 
 }
+
+
+
+
 
