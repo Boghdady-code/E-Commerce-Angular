@@ -20,7 +20,6 @@ export class CartComponent implements OnInit {
   getCartProducts () {
     if (localStorage.getItem("cart") != null) {
       this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
-      console.log (this.cartProducts);
 
   }
   this.getTotal();
@@ -56,7 +55,11 @@ detectChange() {
 deleteProduct(index:any) {
   this.cartProducts.splice(index,1);
   localStorage.setItem ("cart", JSON.stringify(this.cartProducts))
-  this.getTotal()
+  this.getTotal();
+
+
+
+
 
 }
 

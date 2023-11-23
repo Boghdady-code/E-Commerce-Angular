@@ -10,8 +10,15 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   isUserLogged:boolean=false;
-  cartCountNumber : number = 0;
+  cartCountNumber : any = localStorage.getItem('cartCount');
   @ViewChild ('burger') burger!:ElementRef;
+  @ViewChild ('line1') line1!:ElementRef;
+  @ViewChild ('line2') line2!:ElementRef;
+  @ViewChild ('line3') line3!:ElementRef;
+
+
+
+
   constructor(private AuthService:AuthService, private productService:ProductService) { }
 
 
@@ -34,13 +41,19 @@ export class NavbarComponent implements OnInit {
 
   getCount() {
     this.productService.cartCount().subscribe(response => {
-      this.cartCountNumber = response;
+      console.log(response);
+      localStorage.setItem('cartCount', JSON.stringify(response));
+      this.cartCountNumber=Number(localStorage.getItem('cartCount'));
+
     })
 
   }
 
   toggleMenu(){
     this.burger.nativeElement.classList.toggle('active-burger');
+    this.line1.nativeElement.classList.toggle('first');
+    this.line2.nativeElement.classList.toggle('second');
+    this.line3.nativeElement.classList.toggle('third');
   }
 
 }
