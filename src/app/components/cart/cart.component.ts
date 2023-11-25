@@ -11,10 +11,12 @@ export class CartComponent implements OnInit {
   cartProducts:any[]=[];
   total:number=0;
   success:boolean=false;
+  cartStatus:boolean=true;
 
   constructor(private productService:ProductService) { }
   ngOnInit(): void {
     this.getCartProducts();
+    this.checkCart();
 
   }
   getCartProducts () {
@@ -57,6 +59,7 @@ deleteProduct(index:any) {
   this.cartProducts.splice(index,1);
   localStorage.setItem ("cart", JSON.stringify(this.cartProducts))
   this.getTotal()
+  this.productService.cartCountBehaviourSubject.next(this.cartProducts.length);
 
 }
 
@@ -64,6 +67,8 @@ deleteAllCart(){
   this.cartProducts.splice(0, this.cartProducts.length);
   localStorage.setItem ("cart", JSON.stringify(this.cartProducts))
   this.getTotal();
+  this.productService.cartCountBehaviourSubject.next(this.cartProducts.length);
+
 }
 
 orderNow() {
@@ -82,6 +87,16 @@ orderNow() {
     this.deleteAllCart();
 
   })
+    this.productService.cartCountBehaviourSubject.next(this.cartProducts.length);
+
+}
+
+checkCart () {
+ if (this.cartProducts.length != 0) {
+   this.cartStatus = false;
+ } else {
+   this.cartStatus = true;
+ }
 }
 
 

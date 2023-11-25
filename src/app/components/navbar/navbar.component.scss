@@ -1,6 +1,7 @@
 .navbar {
   padding: 2px 20px;
   height: 100px;
+  position: relative;
 
 
 
@@ -19,13 +20,13 @@
 
 
 .navbar .search {
-  flex:1;
+  flex: 1;
   position: relative;
 }
 
 .navbar .search input {
   width: 100%;
-  padding:  10px 30px;
+  padding: 10px 30px;
   border: none;
   outline: none;
 }
@@ -43,28 +44,31 @@
 }
 
 
-.navbar .links {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: relative;
+// .navbar .links {
+//   flex: 1;
+//   display: flex;
+//   justify-content: flex-end;
+//   align-items: center;
+//   position: relative;
 
-}
+// }
 
-.navbar .links a {
+.navbar a {
   color: #fff;
   margin-right: 10px;
 
 }
 
-.navbar .links .user-links {
+.navbar .user-links {
   margin-right: 20px;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .navbar .shopping-cart {
@@ -94,6 +98,7 @@
   height: 14px;
   position: relative;
   display: none;
+  cursor: pointer;
 
 }
 
@@ -125,13 +130,13 @@
 }
 
 
-.burger:hover span:nth-child(2) {
+.burger .line-2.second {
   opacity: 0;
 
 
 }
 
-.burger:hover span:first-child {
+.burger .line-1.first {
   background-color: red;
   top: 6px;
   transform: rotate(-45deg);
@@ -142,7 +147,7 @@
 }
 
 
-.burger:hover span:last-child {
+.burger .line-3.third {
   background-color: red;
   top: 6px;
   transform: rotate(45deg);
@@ -160,26 +165,26 @@
   }
 
 
-  .links .user-links {
+  .navbar .user-links {
     display: none;
   }
 
 
-    .active-burger {
-      display: flex !important;
-      flex-direction: column;
-      position: absolute;
-      left: -225px;
-      bottom: -112px;
-      width: 370px;
-      background-color: #212529;
-      padding: 15px;
+  .active-burger {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: -140px;
+    width: 100%;
+    background-color: #212529;
+    padding: 15px;
 
-    }
+  }
 
-    .links .user-links a {
-      margin-bottom: 20px;
-    }
+  .navbar .user-links a {
+    margin:  20px;
+  }
 
 
 
@@ -188,8 +193,3 @@
 
 
 }
-
-
-
-
-

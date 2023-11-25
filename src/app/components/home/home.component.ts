@@ -4,6 +4,8 @@ import { Element } from '@angular/compiler';
 
 
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -62,13 +64,15 @@ export class HomeComponent implements OnInit{
   ngOnInit(): void {
     this.getProductData();
     this.productService.isProductExist.subscribe(response => {
-      this.isExist=response;
-    })
+          this.isExist=response;
 
-    setTimeout(() => {
+       setTimeout(() => {
       this.isExist=false;
 
-    }, 1000);
+    }, 10000);
+
+    })
+
 
 
 

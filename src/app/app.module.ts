@@ -18,6 +18,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SkeletonModule } from 'primeng/skeleton';
 import { ToastModule } from 'primeng/toast';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { AnimateOnScrollModule } from 'primeng/animateonscroll';
+
 
 
 
@@ -46,7 +48,8 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     BrowserAnimationsModule,
     SkeletonModule,
     ToastModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    AnimateOnScrollModule
 
 
 

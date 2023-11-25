@@ -22,3 +22,22 @@ tbody .quantity {
 .image {
   width: 80px;
 }
+
+
+.empty {
+  text-align: center;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 15px 10px;
+}
+
+.empty p {
+  color: #777;
+
+}
+

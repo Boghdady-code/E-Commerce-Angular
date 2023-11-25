@@ -8,12 +8,14 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductService {
-  cartProducts:any[]=[];
+  cartProducts:any[]=localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")!) : [];
   isProductExist= new BehaviorSubject<boolean>(false);
-  cartCountBehaviourSubject:BehaviorSubject<number>=new BehaviorSubject<number>(0);
+  cartCountBehaviourSubject = new BehaviorSubject<any>([]);
 
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) {
+
+  }
 
   showProducts ():Observable<any> {
 
@@ -41,6 +43,8 @@ saveProduct({product, quantity}:any):any {
 
 
       }
+
+
     } else {
       this.cartProducts.push({product,quantity});
       localStorage.setItem ("cart", JSON.stringify(this.cartProducts))
@@ -48,7 +52,10 @@ saveProduct({product, quantity}:any):any {
 
 
     }
-    this.cartCountBehaviourSubject.next(this.cartProducts.length)
+
+    this.cartCountBehaviourSubject.next(this.cartProducts.length);
+
+
 
 
 
@@ -59,7 +66,11 @@ saveProduct({product, quantity}:any):any {
   return this.httpClient.get(`https://fakestoreapi.com/products/${id}`)
   }
 
-  cartCount():Observable<number>{
+  cartCount():Observable<any>{
+        this.cartCountBehaviourSubject.next(this.cartProducts.length);
+
+
+
 
     return this.cartCountBehaviourSubject.asObservable();
   }
